@@ -23,7 +23,7 @@ fi
 cppcheck --xml --enable=style,performance,portability,information -j 4 -q "${suppressions_list}" ${changed_files} 2>&1 | tee "${report_file}"
 
 # Unused function checking must happen in one job
-# cppcheck --xml --enable=unusedFunction -q "${suppressions_list}" source 2>&1 | tee "${REPORT_DIR_NAME}/report-cppcheck-unused-functions.xml"
+ cppcheck --xml --enable=unusedFunction -q "${suppressions_list}" source 2>&1 | tee "${REPORT_DIR_NAME}/report-cppcheck-unused-functions.xml"
 
 # Finally, check the configuration
-# cppcheck --xml --enable=missingInclude -j 4 --force -q "${suppressions_list}" ${changed_files} 2>&1 | tee "${REPORT_DIR_NAME}/report-cppcheck-configuration.xml"
+ cppcheck --xml --enable=missingInclude -j 4 --force -q "${suppressions_list}" ${changed_files} 2>&1 | tee "${REPORT_DIR_NAME}/report-cppcheck-configuration.xml"

@@ -1,5 +1,8 @@
 #include <stdio.h>
 int main()
 {
-return 0;
+	int a;
+	char l;
+	char *b;
+	return 0;
 }
